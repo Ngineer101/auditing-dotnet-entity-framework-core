@@ -8,6 +8,9 @@ namespace NWBlog.EntityFramework.AuditingDemo.Data
     {
         private readonly string _username;
 
+        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<AuditEntry> AuditEntries { get; set; }
+
         public DefaultContext(DbContextOptions<DefaultContext> options, IHttpContextAccessor httpContextAccessor) : base(options)
         {
             // Get the claims principal from the HttpContext
