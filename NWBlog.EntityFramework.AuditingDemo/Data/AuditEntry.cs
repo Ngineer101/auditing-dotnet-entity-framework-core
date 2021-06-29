@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,6 +16,6 @@ namespace NWBlog.EntityFramework.AuditingDemo.Data
         public string Username { get; set; }
         public DateTime TimeStamp { get; set; }
         public string EntityId { get; set; }
-        public string Changes { get; set; }
+        public Dictionary<string, object> Changes { get; set; }
     }
 }

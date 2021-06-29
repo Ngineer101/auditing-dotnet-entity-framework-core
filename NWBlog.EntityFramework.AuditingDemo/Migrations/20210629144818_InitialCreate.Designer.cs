@@ -9,7 +9,7 @@ using NWBlog.EntityFramework.AuditingDemo.Data;
 namespace NWBlog.EntityFramework.AuditingDemo.Migrations
 {
     [DbContext(typeof(DefaultContext))]
-    [Migration("20210629142012_InitialCreate")]
+    [Migration("20210629144818_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
