@@ -52,7 +52,7 @@ namespace NWBlog.EntityFramework.AuditingDemo.Data
 
             foreach (var entry in ChangeTracker.Entries())
             {
-                // Dot not audit entities that is not tracked, not changed, or not of type IAuditable
+                // Dot not audit entities that are not tracked, not changed, or not of type IAuditable
                 if (entry.State == EntityState.Detached || entry.State == EntityState.Unchanged || !(entry.Entity is IAuditable))
                     continue;
 
@@ -65,7 +65,7 @@ namespace NWBlog.EntityFramework.AuditingDemo.Data
                     TimeStamp = DateTime.UtcNow,
                     Changes = entry.Properties.Select(p => new { p.Metadata.Name, p.CurrentValue }).ToDictionary(i => i.Name, i => i.CurrentValue),
 
-                    // TempProperties are the properties that is only generated on save, e.g. ID's
+                    // TempProperties are properties that are only generated on save, e.g. ID's
                     // These properties will be set correctly after the audited entity has been saved
                     TempProperties = entry.Properties.Where(p => p.IsTemporary).ToList(),
                 };

@@ -20,7 +20,7 @@ namespace NWBlog.EntityFramework.AuditingDemo.Data
         public Dictionary<string, object> Changes { get; set; }
 
         [NotMapped]
-        // TempProperties are used for the temporary properties on an entity that are only generated on save, e.g. ID's
+        // TempProperties are used for properties that are only generated on save, e.g. ID's
         public List<PropertyEntry> TempProperties { get; set; }
     }
 }
