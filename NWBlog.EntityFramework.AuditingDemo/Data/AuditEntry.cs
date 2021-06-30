@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,5 +18,9 @@ namespace NWBlog.EntityFramework.AuditingDemo.Data
         public DateTime TimeStamp { get; set; }
         public string EntityId { get; set; }
         public Dictionary<string, object> Changes { get; set; }
+
+        [NotMapped]
+        // TempProperties are used for the temporary properties on an entity that are only generated on save, e.g. ID's
+        public List<PropertyEntry> TempProperties { get; set; }
     }
 }

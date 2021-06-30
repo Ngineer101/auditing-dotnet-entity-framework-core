@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace NWBlog.EntityFramework.AuditingDemo.Data
 {
     [Table(nameof(Vehicle))]
-    public class Vehicle
+    public class Vehicle : IAuditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
